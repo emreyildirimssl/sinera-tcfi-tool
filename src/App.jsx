@@ -156,7 +156,7 @@ export default function SineraTCFI() {
   const validateLead = () => {
     const e={};
     if (!lead.name.trim()) e.name="Required";
-    if (!lead.email.match(/^[^s@]+@[^s@]+.[^s@]+$/)) e.email="Valid work email required";
+   if (!lead.email.includes('@') || !lead.email.includes('.')) e.email="Valid work email required";
     if (!lead.company.trim()) e.company="Required";
     if (!gdpr) e.gdpr="You must agree to continue";
     return e;
